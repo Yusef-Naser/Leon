@@ -1,9 +1,7 @@
 # Leon
 leon is a ios library written with swift to enable developer to handle show images with animation and with more gesture
 
-# Usage
-
-## Installation
+# Installation
 
 ### CocoaPods
 
@@ -12,6 +10,9 @@ leon is a ios library written with swift to enable developer to handle show imag
 ```ruby
 pod 'Leon', '~> 0.0.1'
 ```
+
+# Usage
+
 
 ## How to get image frame
 
