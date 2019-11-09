@@ -35,6 +35,7 @@ There are 6 init funtions in Leon Images
 ``` swift
 // 1- first init
 let vc = LeonImages(image: imageView.image!)
+self.present(vc , animated: true )
 ```
 
 *  image: just pass image in imegView without starter animation
@@ -56,6 +57,7 @@ let vc = LeonImages(image: imageView.image!)
 ```swift
 //2- second init
 let vc = LeonImages(imageURL: String )
+self.present(vc , animated: true )
 ````
 * imageURL:  is a string url of image to load from web without starter animation
 - use this init if you don't want start animation
@@ -71,6 +73,7 @@ let vc = LeonImages(imageURL: String )
 ```swift
 // 3- third init
 let vc = LeonImages(listImagesURL: [Any] , index : 2 )
+self.present(vc , animated: true )
 ````
 * listImagesURL : an array that contain two type of images 
     - array may contain string url image to load from web
@@ -89,6 +92,7 @@ let vc = LeonImages(listImagesURL: [Any] , index : 2 )
 ````swift
 // 4- fourth init
 let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! , imageURL: String )
+self.present(vc , animated: true )
 ````
 - Use this init to start Leon with animation from start fram to center of screen
 *  startFrame :  init frame of image to start frame from this point
@@ -106,6 +110,7 @@ let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! ,
 ```swift
 // 5- fifth init
 let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! )
+self.present(vc , animated: true )
 ```
 - Use this init to start Leon with animation from start fram to center of screen
 *  startFrame :  init frame of image to start frame from this point
@@ -123,6 +128,7 @@ let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! )
 ```swift
 // 6- Six init
 let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image!, listImagesURL: [Any] , index : 2 )
+self.present(vc , animated: true )
 ```
 *  startFrame :  init frame of image to start frame from this point
 * startImage : init UIImage in imageView untile animation finished
