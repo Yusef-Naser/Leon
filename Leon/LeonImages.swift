@@ -252,6 +252,10 @@ open class LeonImages : UIViewController {
         
     }
     
+    open func singleTapped() {
+        
+    }
+    
     
 }
 extension LeonImages : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , IsScrollEnableDelegate {
@@ -268,6 +272,8 @@ extension LeonImages : UICollectionViewDelegate , UICollectionViewDataSource , U
         self.finishVC?()
         self.dismiss(animated: true)
     }
+    
+   
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         

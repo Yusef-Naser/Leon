@@ -11,6 +11,8 @@ import Leon
 
 class CustomLeonImages : LeonImages {
     
+    var isTapped = false
+    
     // creating topView
     lazy var headerView : UIView = {
         let v = UIView()
@@ -70,6 +72,17 @@ class CustomLeonImages : LeonImages {
     
     @objc private func dismissController(){
         dismissLeon()
+    }
+    
+    override func singleTapped() {
+        if !isTapped {
+            isTapped = true
+            startPanGesture()
+        }else {
+            isTapped = false
+            returnImageToCenter()
+        }
+        
     }
     
     

@@ -12,6 +12,7 @@ import UIKit
 protocol IsScrollEnableDelegate : class  {
     
     func dismissLeon()
+    func singleTapped()
 }
 
 
@@ -241,6 +242,7 @@ class CellSlidingImages : UICollectionViewCell {
     }
     
     @objc private func handleSingleTap () {
+        self.delegate?.singleTapped()
         if imageView.errorLoading && tapToReload , let s = self.imageURL as? String {
             self.sessionLoadImage = self.imageView.imageFromServerURL(urlString: s )
             return
@@ -252,6 +254,7 @@ class CellSlidingImages : UICollectionViewCell {
         }
     }
     
+   
     
     // Calculates the zoom rectangle for the scale
     func zoomRectForScale(_ scale: CGFloat, center: CGPoint) -> CGRect {

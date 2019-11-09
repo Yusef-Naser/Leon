@@ -179,7 +179,9 @@ import UIKit
 
 class CustomLeonImages : LeonImages {
 
-// creating topView
+    var isTapped = false
+ 
+    // creating topView
     lazy var headerView : UIView = {
         let v = UIView()
         v.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.7725490196, blue: 0.9411764706, alpha: 0.5)
@@ -236,6 +238,18 @@ class CustomLeonImages : LeonImages {
 
     @objc private func dismissController(){
         self.dismissLeon()
+    }
+
+
+    override func singleTapped() {
+        if !isTapped {
+            isTapped = true
+            startPanGesture()
+        }else {
+            isTapped = false
+            returnImageToCenter()
+        }
+
     }
 
 
