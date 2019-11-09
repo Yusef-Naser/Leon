@@ -247,5 +247,14 @@ class CustomLeonImages : LeonImages {
 
  
 ```
+## Author
+### Yusef Naser
 
+- [Twitter](https://twitter.com/yusef_naser93)
+- [GitHub](https://github.com/Yusef-Naser)
+-[Linkedin](https://www.linkedin.com/in/yusef-naser-485b7710a)
+
+
+## License
+`Leon` is available under the MIT license. See the [LICENSE](./LICENSE) file for more info.
 
