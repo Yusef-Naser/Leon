@@ -3,6 +3,15 @@ leon is a ios library written with swift to enable developer to handle show imag
 
 # Usage
 
+## Installation
+
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `Leon` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'Leon', '~> 0.0.1'
+```
 
 ## How to get image frame
 
@@ -252,7 +261,7 @@ class CustomLeonImages : LeonImages {
 
 - [Twitter](https://twitter.com/yusef_naser93)
 - [GitHub](https://github.com/Yusef-Naser)
--[Linkedin](https://www.linkedin.com/in/yusef-naser-485b7710a)
+- [Linkedin](https://www.linkedin.com/in/yusef-naser-485b7710a)
 
 
 ## License
