@@ -8,16 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		2C159BD12375A58800CA77D6 /* Leon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C159BCF2375A58800CA77D6 /* Leon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C159BDA2375A5D600CA77D6 /* LeonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159BD72375A5D600CA77D6 /* LeonImageView.swift */; };
+		2C159BDB2375A5D600CA77D6 /* CellSlidingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159BD82375A5D600CA77D6 /* CellSlidingImages.swift */; };
+		2C159BDC2375A5D600CA77D6 /* LeonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159BD92375A5D600CA77D6 /* LeonImages.swift */; };
+		2C159C4C237656D300CA77D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C4B237656D300CA77D6 /* AppDelegate.swift */; };
+		2C159C4E237656D300CA77D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C4D237656D300CA77D6 /* ViewController.swift */; };
+		2C159C51237656D300CA77D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C159C4F237656D300CA77D6 /* Main.storyboard */; };
+		2C159C53237656D500CA77D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C159C52237656D500CA77D6 /* Assets.xcassets */; };
+		2C159C56237656D500CA77D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C159C54237656D500CA77D6 /* LaunchScreen.storyboard */; };
+		2C159C5E237658BD00CA77D6 /* CustomLeonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */; };
+		2C159C612376591300CA77D6 /* CellCollectionImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C602376591300CA77D6 /* CellCollectionImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C159BCC2375A58800CA77D6 /* Leon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C159BCF2375A58800CA77D6 /* Leon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leon.h; sourceTree = "<group>"; };
 		2C159BD02375A58800CA77D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C159BD72375A5D600CA77D6 /* LeonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeonImageView.swift; sourceTree = "<group>"; };
+		2C159BD82375A5D600CA77D6 /* CellSlidingImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSlidingImages.swift; sourceTree = "<group>"; };
+		2C159BD92375A5D600CA77D6 /* LeonImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeonImages.swift; sourceTree = "<group>"; };
+		2C159C49237656D300CA77D6 /* LeonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C159C4B237656D300CA77D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C159C4D237656D300CA77D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C159C50237656D300CA77D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C159C52237656D500CA77D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C159C55237656D500CA77D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C159C57237656D500CA77D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLeonImages.swift; sourceTree = "<group>"; };
+		2C159C602376591300CA77D6 /* CellCollectionImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2C159BC92375A58800CA77D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C159C46237656D300CA77D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				2C159BCE2375A58800CA77D6 /* Leon */,
+				2C159C4A237656D300CA77D6 /* LeonExample */,
 				2C159BCD2375A58800CA77D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				2C159BCC2375A58800CA77D6 /* Leon.framework */,
+				2C159C49237656D300CA77D6 /* LeonExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +77,44 @@
 		2C159BCE2375A58800CA77D6 /* Leon */ = {
 			isa = PBXGroup;
 			children = (
+				2C159BD82375A5D600CA77D6 /* CellSlidingImages.swift */,
+				2C159BD92375A5D600CA77D6 /* LeonImages.swift */,
+				2C159BD72375A5D600CA77D6 /* LeonImageView.swift */,
 				2C159BCF2375A58800CA77D6 /* Leon.h */,
 				2C159BD02375A58800CA77D6 /* Info.plist */,
 			);
 			path = Leon;
+			sourceTree = "<group>";
+		};
+		2C159C4A237656D300CA77D6 /* LeonExample */ = {
+			isa = PBXGroup;
+			children = (
+				2C159C5F2376590000CA77D6 /* viewController */,
+				2C159C5C237658A200CA77D6 /* customLeon */,
+				2C159C4B237656D300CA77D6 /* AppDelegate.swift */,
+				2C159C4F237656D300CA77D6 /* Main.storyboard */,
+				2C159C52237656D500CA77D6 /* Assets.xcassets */,
+				2C159C54237656D500CA77D6 /* LaunchScreen.storyboard */,
+				2C159C57237656D500CA77D6 /* Info.plist */,
+			);
+			path = LeonExample;
+			sourceTree = "<group>";
+		};
+		2C159C5C237658A200CA77D6 /* customLeon */ = {
+			isa = PBXGroup;
+			children = (
+				2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */,
+			);
+			path = customLeon;
+			sourceTree = "<group>";
+		};
+		2C159C5F2376590000CA77D6 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C159C4D237656D300CA77D6 /* ViewController.swift */,
+				2C159C602376591300CA77D6 /* CellCollectionImages.swift */,
+			);
+			path = viewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +149,38 @@
 			productReference = 2C159BCC2375A58800CA77D6 /* Leon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2C159C48237656D300CA77D6 /* LeonExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C159C5A237656D500CA77D6 /* Build configuration list for PBXNativeTarget "LeonExample" */;
+			buildPhases = (
+				2C159C45237656D300CA77D6 /* Sources */,
+				2C159C46237656D300CA77D6 /* Frameworks */,
+				2C159C47237656D300CA77D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeonExample;
+			productName = LeonExample;
+			productReference = 2C159C49237656D300CA77D6 /* LeonExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2C159BC32375A58800CA77D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "yusef naser";
 				TargetAttributes = {
 					2C159BCB2375A58800CA77D6 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					2C159C48237656D300CA77D6 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -104,6 +191,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2C159BC22375A58800CA77D6;
 			productRefGroup = 2C159BCD2375A58800CA77D6 /* Products */;
@@ -111,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				2C159BCB2375A58800CA77D6 /* Leon */,
+				2C159C48237656D300CA77D6 /* LeonExample */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +212,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C159C47237656D300CA77D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C159C56237656D500CA77D6 /* LaunchScreen.storyboard in Resources */,
+				2C159C53237656D500CA77D6 /* Assets.xcassets in Resources */,
+				2C159C51237656D300CA77D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -130,10 +229,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C159BDB2375A5D600CA77D6 /* CellSlidingImages.swift in Sources */,
+				2C159BDC2375A5D600CA77D6 /* LeonImages.swift in Sources */,
+				2C159BDA2375A5D600CA77D6 /* LeonImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C159C45237656D300CA77D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C159C5E237658BD00CA77D6 /* CustomLeonImages.swift in Sources */,
+				2C159C4E237656D300CA77D6 /* ViewController.swift in Sources */,
+				2C159C4C237656D300CA77D6 /* AppDelegate.swift in Sources */,
+				2C159C612376591300CA77D6 /* CellCollectionImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C159C4F237656D300CA77D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C159C50237656D300CA77D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2C159C54237656D500CA77D6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C159C55237656D500CA77D6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2C159BD22375A58800CA77D6 /* Debug */ = {
@@ -261,6 +393,33 @@
 		2C159BD52375A58800CA77D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Leon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.Leon";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C159BD62375A58800CA77D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -280,27 +439,37 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
-		2C159BD62375A58800CA77D6 /* Release */ = {
+		2C159C58237656D500CA77D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Leon/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = LeonExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.Leon";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.LeonExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C159C59237656D500CA77D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeonExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.LeonExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,6 +492,15 @@
 			buildConfigurations = (
 				2C159BD52375A58800CA77D6 /* Debug */,
 				2C159BD62375A58800CA77D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C159C5A237656D500CA77D6 /* Build configuration list for PBXNativeTarget "LeonExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C159C58237656D500CA77D6 /* Debug */,
+				2C159C59237656D500CA77D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
