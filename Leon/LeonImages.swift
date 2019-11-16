@@ -170,18 +170,16 @@ open class LeonImages : UIViewController {
         
         self.view.addSubview(containerClose)
         containerClose.translatesAutoresizingMaskIntoConstraints = false
-        containerClose.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        containerClose.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        
         if #available(iOS 11.0, *) {
-            containerClose.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor , constant: 16).isActive = true
+            containerClose.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor , constant: 16 ).isActive = true
             containerClose.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor , constant: 16 ).isActive = true
-        }else {
-            containerClose.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 16).isActive = true
+        } else {
+            containerClose.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 16 ).isActive = true
             containerClose.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 16 ).isActive = true
         }
         
-       
+        containerClose.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        containerClose.widthAnchor.constraint(equalToConstant: 35).isActive = true
         
     }
     

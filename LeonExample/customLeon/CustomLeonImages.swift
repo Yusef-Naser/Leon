@@ -23,8 +23,16 @@ class CustomLeonImages : LeonImages {
         b.addTarget(self , action: #selector(dismissController), for: .touchUpInside )
         v.addSubview(b)
         b.translatesAutoresizingMaskIntoConstraints = false
-        b.topAnchor.constraint(equalTo: v.safeAreaLayoutGuide.topAnchor , constant: 16).isActive = true
         b.leadingAnchor.constraint(equalTo: v.leadingAnchor , constant: 16).isActive = true
+        if #available(iOS 11.0, *) {
+            b.topAnchor.constraint(equalTo: v.safeAreaLayoutGuide.topAnchor , constant: 16).isActive = true
+        } else {
+            b.topAnchor.constraint(equalTo: v.topAnchor , constant: 16).isActive = true
+        }
+
+        
+        
+        
         
         let l = UILabel()
         l.text = "Title Header"
