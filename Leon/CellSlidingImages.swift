@@ -9,24 +9,21 @@
 import UIKit
 
 
-protocol IsScrollEnableDelegate : class  {
-    
+protocol DelegateCellSlidingImages : class  {
     func dismissLeon()
     func singleTapped()
 }
-
-
 
 class CellSlidingImages : UICollectionViewCell {
     
     var imageURL : Any? = nil
     var startFrame : CGRect!
-    var startImage : UIImage!
+    var thumbnail : UIImage!
     private var doubleGestureRecognizer: UITapGestureRecognizer!
     private var singleGestureRecognizer : UITapGestureRecognizer!
     var originalFrameForGeneratedSHowImage : CGRect?
     
-    weak var delegate : IsScrollEnableDelegate?
+    weak var delegate : DelegateCellSlidingImages?
     
     private var sessionLoadImage : URLSessionDataTask?
     
@@ -43,8 +40,8 @@ class CellSlidingImages : UICollectionViewCell {
         return self.startFrame != nil
     }
     
-    var withStartImage : Bool {
-        return self.startImage != nil
+    var withThumbnail : Bool {
+        return self.thumbnail != nil
     }
     
     
@@ -63,8 +60,8 @@ class CellSlidingImages : UICollectionViewCell {
             image.alpha = 0
         }
         
-        if self.withStartImage {
-            image.image = self.startImage!
+        if self.withThumbnail {
+            image.image = self.thumbnail!
         }else if let s = self.imageURL ,let ss =  s as? String  {
             sessionLoadImage = image.imageFromServerURL(urlString: ss )
         }
@@ -149,7 +146,7 @@ class CellSlidingImages : UICollectionViewCell {
             
         }) { (bool) in
             
-            if self.withStartImage , let s = self.imageURL as? String  {
+            if self.withThumbnail , let s = self.imageURL as? String  {
                 self.sessionLoadImage = self.imageView.imageFromServerURL(urlString: s )
             } else if let s = self.imageURL as? UIImage {
                 self.imageView.image = s

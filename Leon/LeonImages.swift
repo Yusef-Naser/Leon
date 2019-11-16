@@ -12,13 +12,10 @@ open class LeonImages : UIViewController {
     
     var finishVC : ( () -> Void )?
     
-    
-    
     private var panGestureRecognizer : UIPanGestureRecognizer!
-    open var pageIndex = -1
     private var selectedCell : CellSlidingImages?
     private var startFrame : CGRect!
-    private var startImage : UIImage!
+    private var thumbnail : UIImage!
     private var listImagesURL : [Any] = []
     
     private var sessionLoadImage : URLSessionDataTask?
@@ -26,14 +23,37 @@ open class LeonImages : UIViewController {
     var errorMessage : String = "Error loading, tap to reload"
     var tapToReload : Bool = true
     
-    //    lazy var closeButton : UIButton = {
-    //        let b = UIButton(type: .roundedRect)
-    //        b.setTitle("close", for: .normal)
-    //        b.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.696990537)
-    //        b.layer.cornerRadius = 10
-    //        b.addTarget(self , action: #selector(dismissView), for: .touchUpInside)
-    //        return b
-    //    }()
+    
+    open var pageIndex = -1
+    open var showCloseButton : Bool = true
+    
+    
+    lazy private var containerClose : UIView = {
+       let v = UIView()
+        v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.696990537)
+        v.layer.cornerRadius = 35 / 2
+        v.addGestureRecognizer(UITapGestureRecognizer(target: self , action: #selector(dismissLeon)))
+        v.addSubview(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.centerXAnchor.constraint(equalTo: v.centerXAnchor , constant: 0).isActive = true
+        closeButton.centerYAnchor.constraint(equalTo: v.centerYAnchor , constant: 0).isActive = true
+        
+        closeButton.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        
+        return v
+    }()
+    
+    lazy private var closeButton : UIButton = {
+        let image = UIImage(named: "close.png", in: Bundle.init(for: LeonImages.self ), compatibleWith: nil )
+   //     let imageTint = image?.withRenderingMode(.alwaysTemplate)
+        let b = UIButton()
+      //  b.setTitle("close", for: .normal)
+        b.setImage( image , for: .normal )
+     //   b.tintColor = .black
+        b.addTarget(self , action: #selector(dismissLeon), for: .touchUpInside)
+        return b
+    }()
     
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -52,12 +72,12 @@ open class LeonImages : UIViewController {
     
     
     
-    public init (startFrame : CGRect, startImage : UIImage , imageURL : String ) {
+    public init (startFrame : CGRect, thumbnail : UIImage , imageURL : String ) {
         super.init(nibName: nil , bundle: nil )
         self.listImagesURL = [ imageURL ]
         self.pageIndex = 0
         self.startFrame = startFrame
-        self.startImage = startImage
+        self.thumbnail = thumbnail
         self.modalTransitionStyle = .crossDissolve
         self.modalPresentationStyle = .overCurrentContext
     }
@@ -70,12 +90,12 @@ open class LeonImages : UIViewController {
         self.modalPresentationStyle = .overCurrentContext
     }
     
-    public init (startFrame : CGRect, startImage : UIImage , listImagesURL : [ Any ] , index : Int = 0 ) {
+    public init (startFrame : CGRect, thumbnail : UIImage , listImagesURL : [ Any ] , index : Int = 0 ) {
         super.init(nibName: nil , bundle: nil )
         self.listImagesURL =  listImagesURL
         self.pageIndex = ( index < self.listImagesURL.count) ? index : ( self.listImagesURL.count - 1 )
         self.startFrame = startFrame
-        self.startImage = startImage
+        self.thumbnail = thumbnail
         self.modalTransitionStyle = .crossDissolve
         self.modalPresentationStyle = .overCurrentContext
     }
@@ -88,11 +108,11 @@ open class LeonImages : UIViewController {
         self.modalPresentationStyle = .overCurrentContext
     }
     
-    public init (startFrame : CGRect , startImage : UIImage ) {
+    public init (startFrame : CGRect , thumbnail : UIImage ) {
         super.init(nibName: nil , bundle: nil )
         self.startFrame = startFrame
-        self.startImage = startImage
-        self.listImagesURL = [ startImage ]
+        self.thumbnail = thumbnail
+        self.listImagesURL = [ thumbnail ]
         self.pageIndex = 0
         self.modalTransitionStyle = .crossDissolve
         self.modalPresentationStyle = .overCurrentContext
@@ -100,7 +120,7 @@ open class LeonImages : UIViewController {
     
     public init ( image : UIImage) {
         super.init(nibName: nil , bundle: nil )
-        self.startImage = image
+        self.thumbnail = image
         self.listImagesURL = [image]
         self.pageIndex = 0
         self.modalTransitionStyle = .crossDissolve
@@ -137,7 +157,6 @@ open class LeonImages : UIViewController {
     
     private func addViews () {
         self.view.addSubview(collectionView)
-        //   self.view.addSubview(closeButton)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 0).isActive = true
@@ -145,10 +164,16 @@ open class LeonImages : UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor , constant: 0).isActive = true
         
-        //        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        //        closeButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor , constant: 16).isActive = true
-        //        closeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor , constant: 16 ).isActive = true
-        //        closeButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        if !showCloseButton {
+            return
+        }
+        
+        self.view.addSubview(containerClose)
+        containerClose.translatesAutoresizingMaskIntoConstraints = false
+        containerClose.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor , constant: 16).isActive = true
+        containerClose.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor , constant: 16 ).isActive = true
+        containerClose.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        containerClose.widthAnchor.constraint(equalToConstant: 35).isActive = true
         
     }
     
@@ -195,12 +220,15 @@ open class LeonImages : UIViewController {
                 cell.imageView.center = CGPoint(x: cell.imageView.center.x + translation.x , y: cell.imageView.center.y + translation.y)
                 let absolute = 1 - abs((cell.contentView.center.y - (cell.imageView.center.y)) / 800)
                 cell.scrollView.backgroundColor = UIColor.black.withAlphaComponent(absolute )
+                containerClose.alpha = absolute
                 gestureRecognizer.setTranslation(CGPoint.zero, in: cell.contentView)
             }else {
                 cell.imageView.center = CGPoint(x: cell.imageView.center.x , y: cell.imageView.center.y + translation.y)
                 let absolute = 1 - abs((cell.contentView.center.y - (cell.imageView.center.y)) / 800)
                 cell.scrollView.backgroundColor = UIColor.black.withAlphaComponent(absolute )
                 gestureRecognizer.setTranslation(CGPoint.zero, in: cell.contentView)
+                
+                containerClose.alpha = absolute
             }
             
         }else if gestureRecognizer.state == .ended{
@@ -218,7 +246,7 @@ open class LeonImages : UIViewController {
                     UIView.animate(withDuration: 0.3) {
                         cell.imageView.frame = cell.originalFrameForGeneratedSHowImage!
                         cell.scrollView.backgroundColor = UIColor.black.withAlphaComponent(1)
-                        
+                        self.containerClose.alpha = 1
                     }
                 }
                 
@@ -252,34 +280,26 @@ open class LeonImages : UIViewController {
         
     }
     
-    open func singleTapped() {
-        
-    }
     
     
 }
-extension LeonImages : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , IsScrollEnableDelegate {
+
+extension LeonImages : DelegateCellSlidingImages {
     
-    func allowScrollView() {
-        collectionView.isScrollEnabled = true
+    @objc open func singleTapped() {
+        
     }
     
-    func disAllowScrollView() {
-        collectionView.isScrollEnabled = false
-    }
-    
-    open func dismissLeon() {
+    @objc open func dismissLeon() {
         self.finishVC?()
         self.dismiss(animated: true)
     }
     
-   
+}
+
+extension LeonImages : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        
-        
-        
         if let cell = cell as? CellSlidingImages {
             cell.scrollView.zoomScale = 1.0
         }
@@ -300,14 +320,13 @@ extension LeonImages : UICollectionViewDelegate , UICollectionViewDataSource , U
         
         if pageIndex == indexPath.row {
             cell.startFrame = self.startFrame
-            cell.startImage = self.startImage
+            cell.thumbnail = self.thumbnail
         }else {
             cell.startFrame = nil
-            cell.startImage = nil
+            cell.thumbnail = nil
             cell.imageView.image = nil
         }
         
-        //    cell.imageURL = imageList
         cell.loadImage(image: imageList)
         cell.errorMessage = self.errorMessage
         cell.tapToReload = self.tapToReload

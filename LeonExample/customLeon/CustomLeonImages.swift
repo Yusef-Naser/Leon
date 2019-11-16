@@ -74,7 +74,7 @@ class CustomLeonImages : LeonImages {
         dismissLeon()
     }
     
-    override func singleTapped() {
+    @objc override func singleTapped() {
         if !isTapped {
             isTapped = true
             startPanGesture()

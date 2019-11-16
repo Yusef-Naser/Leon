@@ -91,12 +91,12 @@ self.present(vc , animated: true )
 
 ````swift
 // 4- fourth init
-let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! , imageURL: String )
+let vc = LeonImages(startFrame: imageView.frame , thumbnail: imageView.image! , imageURL: String )
 self.present(vc , animated: true )
 ````
 - Use this init to start Leon with animation from start fram to center of screen
 *  startFrame :  init frame of image to start frame from this point
-* startImage : init UIImage in imageView untile animation finished
+* thumbnail : init UIImage in imageView untile animation finished
 * imageURL : start load image after animation finish 
 
 <br/>
@@ -109,12 +109,12 @@ self.present(vc , animated: true )
 
 ```swift
 // 5- fifth init
-let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image! )
+let vc = LeonImages(startFrame: imageView.frame , thumbnail: imageView.image! )
 self.present(vc , animated: true )
 ```
 - Use this init to start Leon with animation from start fram to center of screen
 *  startFrame :  init frame of image to start frame from this point
-* startImage : init UIImage in imageView untile animation finished
+* thumbnail : init UIImage in imageView untile animation finished
 
 <br/>
 <br/>
@@ -127,11 +127,11 @@ self.present(vc , animated: true )
 
 ```swift
 // 6- Six init
-let vc = LeonImages(startFrame: imageView.frame , startImage: imageView.image!, listImagesURL: [Any] , index : 2 )
+let vc = LeonImages(startFrame: imageView.frame , thumbnail: imageView.image!, listImagesURL: [Any] , index : 2 )
 self.present(vc , animated: true )
 ```
 *  startFrame :  init frame of image to start frame from this point
-* startImage : init UIImage in imageView untile animation finished
+* thumbnail : init UIImage in imageView untile animation finished
 * listImagesURL : an array that contain two type of images 
 - array may contain string url image to load from web
 - array may contain UIImage to just set this image in imageView in LeonImages
@@ -160,9 +160,11 @@ vc.tapToReload = true
 ```
 </p>
 
-
-
-
+- enable / disable close button (default value : true)
+```swift
+let vc = // use init LeonImages
+vc.showCloseButton = false
+```
 
 - dismiss image by panGesture
 - zoom image with pinch gesture

@@ -77,6 +77,8 @@ class ViewController: UIViewController {
         // 3- third parm
         let vc = LeonImages(listImagesURL: [  url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] , index : 2 )
         
+        vc.showCloseButton = true
+        
         // 4- fourth parm
         //  let vc = LeonImages(listImagesURL: [ url1 , url2 , url3 , url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] )
         
@@ -91,7 +93,7 @@ class ViewController: UIViewController {
         
         
         // 6.1- 6 parm
-        //      let vc = LeonImages(startFrame: CGRect(origin: point , size: size ) , startImage: firstImageView.image!, listImagesURL: [ url1 , url2 , url3 , url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] )
+      //  let vc = LeonImages(startFrame: CGRect(origin: point , size: size ) , thumbnail: firstImageView.image! , listImagesURL: [ url1 , url2 , url3 , url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] )
         
         
         self.present( vc , animated: true )
@@ -156,7 +158,7 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
             let realFrame = collectionView .convert(attributes.frame , to: collectionView.superview)
             
             
-            let vc = CustomLeonImages(startFrame: realFrame , startImage: cell.imageCell.image ?? UIImage(), listImagesURL: arrayImages , index: indexPath.row )
+            let vc = CustomLeonImages(startFrame: realFrame , thumbnail: cell.imageCell.image ?? UIImage(), listImagesURL: arrayImages , index: indexPath.row )
             self.present(vc , animated: true )
         }
         
