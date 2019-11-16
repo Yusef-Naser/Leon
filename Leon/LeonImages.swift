@@ -21,7 +21,7 @@ open class LeonImages : UIViewController {
     private var sessionLoadImage : URLSessionDataTask?
     
     var errorMessage : String = "Error loading, tap to reload"
-    var tapToReload : Bool = true
+    open var tapToReload : Bool = true
     
     
     open var pageIndex = -1
