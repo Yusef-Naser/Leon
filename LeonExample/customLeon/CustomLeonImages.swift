@@ -19,6 +19,7 @@ class CustomLeonImages : LeonImages {
         v.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.7725490196, blue: 0.9411764706, alpha: 0.5)
         
         let b = UIButton()
+        b.layer.cornerRadius = 35 / 2
         b.setTitle("close", for: .normal)
         b.addTarget(self , action: #selector(dismissController), for: .touchUpInside )
         v.addSubview(b)
@@ -29,10 +30,6 @@ class CustomLeonImages : LeonImages {
         } else {
             b.topAnchor.constraint(equalTo: v.topAnchor , constant: 16).isActive = true
         }
-
-        
-        
-        
         
         let l = UILabel()
         l.text = "Title Header"
@@ -45,6 +42,9 @@ class CustomLeonImages : LeonImages {
         
         return v
     }()
+    
+   
+    
     
     // creating bottomView
     lazy var footerView : UIView = {

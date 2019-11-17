@@ -18,7 +18,7 @@
 		2C159C56237656D500CA77D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C159C54237656D500CA77D6 /* LaunchScreen.storyboard */; };
 		2C159C5E237658BD00CA77D6 /* CustomLeonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */; };
 		2C159C612376591300CA77D6 /* CellCollectionImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C602376591300CA77D6 /* CellCollectionImages.swift */; };
-		2C19BF002380519E009A6FE5 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C19BEFF2380519E009A6FE5 /* close.png */; };
+		2C922050238202CF00F79DC7 /* CloseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92204E2381FD6700F79DC7 /* CloseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		2C159C57237656D500CA77D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLeonImages.swift; sourceTree = "<group>"; };
 		2C159C602376591300CA77D6 /* CellCollectionImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionImages.swift; sourceTree = "<group>"; };
-		2C19BEFF2380519E009A6FE5 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2C92204E2381FD6700F79DC7 /* CloseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +79,10 @@
 		2C159BCE2375A58800CA77D6 /* Leon */ = {
 			isa = PBXGroup;
 			children = (
-				2C19BEFF2380519E009A6FE5 /* close.png */,
 				2C159BD82375A5D600CA77D6 /* CellSlidingImages.swift */,
 				2C159BD92375A5D600CA77D6 /* LeonImages.swift */,
 				2C159BD72375A5D600CA77D6 /* LeonImageView.swift */,
+				2C92204E2381FD6700F79DC7 /* CloseView.swift */,
 				2C159BCF2375A58800CA77D6 /* Leon.h */,
 				2C159BD02375A58800CA77D6 /* Info.plist */,
 			);
@@ -212,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C19BF002380519E009A6FE5 /* close.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +235,7 @@
 				2C159BDB2375A5D600CA77D6 /* CellSlidingImages.swift in Sources */,
 				2C159BDC2375A5D600CA77D6 /* LeonImages.swift in Sources */,
 				2C159BDA2375A5D600CA77D6 /* LeonImageView.swift in Sources */,
+				2C922050238202CF00F79DC7 /* CloseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,33 +28,26 @@ open class LeonImages : UIViewController {
     open var showCloseButton : Bool = true
     
     
-    lazy private var containerClose : UIView = {
-       let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.696990537)
+    lazy var containerClose : UIView = {
+        let v = UIView()
+        v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.597243618)
         v.layer.cornerRadius = 35 / 2
-        v.addGestureRecognizer(UITapGestureRecognizer(target: self , action: #selector(dismissLeon)))
-        v.addSubview(closeButton)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.centerXAnchor.constraint(equalTo: v.centerXAnchor , constant: 0).isActive = true
-        closeButton.centerYAnchor.constraint(equalTo: v.centerYAnchor , constant: 0).isActive = true
         
-        closeButton.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        closeButton.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        let close = CloseView()
+        
+        v.addSubview(close )
+        
+        close.translatesAutoresizingMaskIntoConstraints = false
+        close.centerXAnchor.constraint(equalTo: v.centerXAnchor , constant: 0).isActive = true
+        close.centerYAnchor.constraint(equalTo: v.centerYAnchor , constant: 0).isActive = true
+        close.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        close.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        v.addGestureRecognizer(UITapGestureRecognizer(target: self , action: #selector(dismissLeon)))
         
         return v
     }()
-    
-    lazy private var closeButton : UIButton = {
-        let image = UIImage(named: "close.png", in: Bundle.init(for: LeonImages.self ), compatibleWith: nil )
-   //     let imageTint = image?.withRenderingMode(.alwaysTemplate)
-        let b = UIButton()
-      //  b.setTitle("close", for: .normal)
-        b.setImage( image , for: .normal )
-     //   b.tintColor = .black
-        b.addTarget(self , action: #selector(dismissLeon), for: .touchUpInside)
-        return b
-    }()
-    
+
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

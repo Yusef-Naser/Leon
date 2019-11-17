@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         // 3- third parm
         let vc = LeonImages(listImagesURL: [  url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] , index : 2 )
         
-        vc.showCloseButton = true
+   //     vc.showCloseButton = false
         
         // 4- fourth parm
         //  let vc = LeonImages(listImagesURL: [ url1 , url2 , url3 , url4 , url5 , url6 , url7 , url8 , url9 , url10 , url11 ] )
@@ -104,6 +104,7 @@ class ViewController: UIViewController {
     @objc private func openSecondImageZooming() {
        
         let vc = CustomLeonImages(image: self.secondImageView.image! )
+        vc.showCloseButton = false
         self.present( vc , animated: true )
         
     }
@@ -159,6 +160,7 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
             
             
             let vc = CustomLeonImages(startFrame: realFrame , thumbnail: cell.imageCell.image ?? UIImage(), listImagesURL: arrayImages , index: indexPath.row )
+            vc.showCloseButton = false
             self.present(vc , animated: true )
         }
         
