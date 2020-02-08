@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Leon"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "Leon is an iOS library written with swift for show and slide images with gesture and more."
 
 
