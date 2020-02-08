@@ -45,7 +45,7 @@ class LeonImageView : UIImageView {
             DispatchQueue.main.async(execute: { () -> Void in
                 self.stopLoading()
                 if error != nil {
-                    //   print( "error loading" + error!.localizedDescription )
+                       d( "error loading" + error!.localizedDescription )
                     self.addLoadingError()
                     
                     return

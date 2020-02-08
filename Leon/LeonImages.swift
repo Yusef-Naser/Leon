@@ -8,6 +8,10 @@
 
 import UIKit
 
+func d(_ message : String) {
+  //  print(message)
+}
+
 open class LeonImages : UIViewController {
     
     var finishVC : ( () -> Void )?
@@ -143,10 +147,17 @@ open class LeonImages : UIViewController {
         collectionView.setNeedsLayout()
         collectionView.layoutIfNeeded()
         
-        collectionView.scrollToItem(at: IndexPath(row: pageIndex , section: 0), at: .centeredHorizontally , animated: true )
+        collectionView.scrollToItem(at: IndexPath(row:  pageIndex , section: 0), at: .centeredHorizontally , animated: true )
         
     }
     
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UIView.userInterfaceLayoutDirection(
+            for: view.semanticContentAttribute) == .rightToLeft {
+            pageIndex = getCorrentIndexInRTL(index: pageIndex)
+        }
+    }
     
     private func addViews () {
         self.view.addSubview(collectionView)
@@ -179,11 +190,25 @@ open class LeonImages : UIViewController {
     
     
     private func getCurrentCell() -> CellSlidingImages? {
-        let indexPath = IndexPath(row: pageIndex, section: 0)
+      //  let indexPath = IndexPath(row: pageIndex, section: 0)
+        
+        var indexPath : IndexPath!
+        
+        
+        if UIView.userInterfaceLayoutDirection(
+            for: view.semanticContentAttribute) == .rightToLeft {
+            indexPath = IndexPath(row: getCorrentIndexInRTL(index: pageIndex), section: 0)
+        }else {
+            indexPath = IndexPath(row: pageIndex, section: 0)
+        }
         guard let cell = collectionView.cellForItem(at: indexPath) as? CellSlidingImages else {
             return nil
         }
         return cell
+    }
+    
+    private func getCorrentIndexInRTL(index : Int ) -> Int  {
+        return listImagesURL.count - index - 1
     }
     
     

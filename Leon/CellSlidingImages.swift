@@ -164,7 +164,7 @@ class CellSlidingImages : UICollectionViewCell {
             //  self.imageView.frame = self.startFrame
             self.imageView.frame.origin.y = -self.contentView.frame.height
         }) { (bool) in
-            print("dismiss")
+            d("dismiss")
             self.delegate?.dismissLeon()
             self.sessionLoadImage?.cancel()
             //  self.dismiss(animated: true )
@@ -179,7 +179,7 @@ class CellSlidingImages : UICollectionViewCell {
             //  self.imageView.frame = self.startFrame
             self.imageView.frame.origin.y = self.contentView.frame.height
         }) { (bool) in
-            print("dismiss")
+            d("dismiss")
             self.delegate?.dismissLeon()
             self.sessionLoadImage?.cancel()
             //  self.dismiss(animated: true )
