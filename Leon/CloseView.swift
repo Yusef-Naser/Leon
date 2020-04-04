@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CloseView : UIView {
+open class CloseView : UIView {
     
     
     lazy var horizontalView : UIView = {
@@ -34,7 +34,7 @@ class CloseView : UIView {
         verticalView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/4))
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -61,5 +61,38 @@ class CloseView : UIView {
         
     }
     
+    
+}
+
+
+open class ContainerCloseView : UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initViews()
+    }
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initViews()
+    }
+    private func initViews () {
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.597243618)
+        self.layer.cornerRadius = 35 / 2
+        
+        let close = CloseView()
+        
+        self.addSubview(close )
+        
+        close.translatesAutoresizingMaskIntoConstraints = false
+        close.centerXAnchor.constraint(equalTo: self.centerXAnchor , constant: 0).isActive = true
+        close.centerYAnchor.constraint(equalTo: self.centerYAnchor , constant: 0).isActive = true
+        close.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        close.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        
+        self.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        
+        
+    }
     
 }

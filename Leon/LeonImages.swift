@@ -6,6 +6,9 @@
 //  Copyright © 2019 yusef naser. All rights reserved.
 //
 
+
+// https://medium.com/flawless-app-stories/create-your-own-cocoapods-library-da589d5cd270
+
 import UIKit
 
 func d(_ message : String) {
@@ -32,23 +35,9 @@ open class LeonImages : UIViewController {
     open var showCloseButton : Bool = true
     
     
-    lazy var containerClose : UIView = {
-        let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.597243618)
-        v.layer.cornerRadius = 35 / 2
-        
-        let close = CloseView()
-        
-        v.addSubview(close )
-        
-        close.translatesAutoresizingMaskIntoConstraints = false
-        close.centerXAnchor.constraint(equalTo: v.centerXAnchor , constant: 0).isActive = true
-        close.centerYAnchor.constraint(equalTo: v.centerYAnchor , constant: 0).isActive = true
-        close.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        close.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        
+    lazy var containerClose : ContainerCloseView = {
+        let v = ContainerCloseView()
         v.addGestureRecognizer(UITapGestureRecognizer(target: self , action: #selector(dismissLeon)))
-        
         return v
     }()
 
@@ -135,9 +124,7 @@ open class LeonImages : UIViewController {
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self , action: #selector(handelPanGestureRecognizer(_:)) )
         self.view.addGestureRecognizer(self.panGestureRecognizer)
-        
-        
-        
+
     }
     
     
@@ -155,7 +142,7 @@ open class LeonImages : UIViewController {
         super.viewDidAppear(animated)
         if UIView.userInterfaceLayoutDirection(
             for: view.semanticContentAttribute) == .rightToLeft {
-            pageIndex = getCorrentIndexInRTL(index: pageIndex)
+            pageIndex = getCurrentIndexInRTL(index: pageIndex)
         }
     }
     
@@ -182,9 +169,6 @@ open class LeonImages : UIViewController {
             containerClose.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 16 ).isActive = true
         }
         
-        containerClose.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        containerClose.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        
     }
     
     
@@ -197,7 +181,7 @@ open class LeonImages : UIViewController {
         
         if UIView.userInterfaceLayoutDirection(
             for: view.semanticContentAttribute) == .rightToLeft {
-            indexPath = IndexPath(row: getCorrentIndexInRTL(index: pageIndex), section: 0)
+            indexPath = IndexPath(row: getCurrentIndexInRTL(index: pageIndex), section: 0)
         }else {
             indexPath = IndexPath(row: pageIndex, section: 0)
         }
@@ -207,7 +191,7 @@ open class LeonImages : UIViewController {
         return cell
     }
     
-    private func getCorrentIndexInRTL(index : Int ) -> Int  {
+    private func getCurrentIndexInRTL(index : Int ) -> Int  {
         return listImagesURL.count - index - 1
     }
     

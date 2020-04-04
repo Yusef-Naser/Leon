@@ -53,7 +53,7 @@ class CellSlidingImages : UICollectionViewCell {
             image = LeonImageView(frame: self.startFrame! )
         }else {
             image = LeonImageView()
-            let height = UIScreen.main.bounds.height / 3
+            let height = UIScreen.main.bounds.height / 2
             let y = self.contentView.frame.height / 2 - ( height / 2 )
             image.frame = CGRect(x: 0, y: y , width: self.contentView.frame.width , height: height )
             self.originalFrameForGeneratedSHowImage = image.frame
@@ -128,15 +128,12 @@ class CellSlidingImages : UICollectionViewCell {
         animateIn()
     }
     
-    
-    
-    
     func animateIn () {
         UIView.animate(withDuration:  0.3 , animations: {
             self.scrollView.backgroundColor = .black
             if self.startWithAnimation  {
                 // let height = (self.view.frame.height / self.imageView.frame.width) * self.imageView.frame.height
-                let height = UIScreen.main.bounds.height / 3
+                let height = UIScreen.main.bounds.height / 2
                 let y = self.contentView.frame.height / 2 - ( height / 2 )
                 self.imageView.frame = CGRect(x: 0, y: y , width: self.contentView.frame.width , height: height )
                 self.originalFrameForGeneratedSHowImage = self.imageView.frame

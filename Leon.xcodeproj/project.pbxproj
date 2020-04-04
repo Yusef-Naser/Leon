@@ -18,8 +18,20 @@
 		2C159C56237656D500CA77D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C159C54237656D500CA77D6 /* LaunchScreen.storyboard */; };
 		2C159C5E237658BD00CA77D6 /* CustomLeonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */; };
 		2C159C612376591300CA77D6 /* CellCollectionImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C159C602376591300CA77D6 /* CellCollectionImages.swift */; };
+		2C3A02AD241B8CF80027F2B7 /* LeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3A02AC241B8CF80027F2B7 /* LeonTests.swift */; };
+		2C3A02AF241B8CF80027F2B7 /* Leon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C159BCC2375A58800CA77D6 /* Leon.framework */; };
 		2C922050238202CF00F79DC7 /* CloseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92204E2381FD6700F79DC7 /* CloseView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C3A02B0241B8CF80027F2B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C159BC32375A58800CA77D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C159BCB2375A58800CA77D6;
+			remoteInfo = Leon;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C159BCC2375A58800CA77D6 /* Leon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +49,9 @@
 		2C159C57237656D500CA77D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C159C5D237658BD00CA77D6 /* CustomLeonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLeonImages.swift; sourceTree = "<group>"; };
 		2C159C602376591300CA77D6 /* CellCollectionImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionImages.swift; sourceTree = "<group>"; };
+		2C3A02AA241B8CF80027F2B7 /* LeonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3A02AC241B8CF80027F2B7 /* LeonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeonTests.swift; sourceTree = "<group>"; };
+		2C3A02AE241B8CF80027F2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C92204E2381FD6700F79DC7 /* CloseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +70,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C3A02A7241B8CF80027F2B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3A02AF241B8CF80027F2B7 /* Leon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +86,7 @@
 			children = (
 				2C159BCE2375A58800CA77D6 /* Leon */,
 				2C159C4A237656D300CA77D6 /* LeonExample */,
+				2C3A02AB241B8CF80027F2B7 /* LeonTests */,
 				2C159BCD2375A58800CA77D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +96,7 @@
 			children = (
 				2C159BCC2375A58800CA77D6 /* Leon.framework */,
 				2C159C49237656D300CA77D6 /* LeonExample.app */,
+				2C3A02AA241B8CF80027F2B7 /* LeonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +143,15 @@
 				2C159C602376591300CA77D6 /* CellCollectionImages.swift */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		2C3A02AB241B8CF80027F2B7 /* LeonTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C3A02AC241B8CF80027F2B7 /* LeonTests.swift */,
+				2C3A02AE241B8CF80027F2B7 /* Info.plist */,
+			);
+			path = LeonTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,13 +203,31 @@
 			productReference = 2C159C49237656D300CA77D6 /* LeonExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2C3A02A9241B8CF80027F2B7 /* LeonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C3A02B2241B8CF80027F2B7 /* Build configuration list for PBXNativeTarget "LeonTests" */;
+			buildPhases = (
+				2C3A02A6241B8CF80027F2B7 /* Sources */,
+				2C3A02A7241B8CF80027F2B7 /* Frameworks */,
+				2C3A02A8241B8CF80027F2B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C3A02B1241B8CF80027F2B7 /* PBXTargetDependency */,
+			);
+			name = LeonTests;
+			productName = LeonTests;
+			productReference = 2C3A02AA241B8CF80027F2B7 /* LeonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2C159BC32375A58800CA77D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "yusef naser";
 				TargetAttributes = {
@@ -185,6 +237,9 @@
 					};
 					2C159C48237656D300CA77D6 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					2C3A02A9241B8CF80027F2B7 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -203,6 +258,7 @@
 			targets = (
 				2C159BCB2375A58800CA77D6 /* Leon */,
 				2C159C48237656D300CA77D6 /* LeonExample */,
+				2C3A02A9241B8CF80027F2B7 /* LeonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +278,13 @@
 				2C159C56237656D500CA77D6 /* LaunchScreen.storyboard in Resources */,
 				2C159C53237656D500CA77D6 /* Assets.xcassets in Resources */,
 				2C159C51237656D300CA77D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C3A02A8241B8CF80027F2B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +313,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C3A02A6241B8CF80027F2B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3A02AD241B8CF80027F2B7 /* LeonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C3A02B1241B8CF80027F2B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C159BCB2375A58800CA77D6 /* Leon */;
+			targetProxy = 2C3A02B0241B8CF80027F2B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C159C4F237656D300CA77D6 /* Main.storyboard */ = {
@@ -411,10 +490,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.Leon";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,10 +518,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "yu-de.Leon";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,6 +562,42 @@
 			};
 			name = Release;
 		};
+		2C3A02B3241B8CF80027F2B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yu.de.LeonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C3A02B4241B8CF80027F2B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yu.de.LeonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +624,15 @@
 			buildConfigurations = (
 				2C159C58237656D500CA77D6 /* Debug */,
 				2C159C59237656D500CA77D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C3A02B2241B8CF80027F2B7 /* Build configuration list for PBXNativeTarget "LeonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C3A02B3241B8CF80027F2B7 /* Debug */,
+				2C3A02B4241B8CF80027F2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
