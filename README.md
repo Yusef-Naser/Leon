@@ -8,7 +8,7 @@ leon is a ios library written with swift to enable developer to handle show imag
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate `Leon` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'Leon', '~> 0.0.7'
+pod 'Leon', '~> 0.0.8'
 ```
 
 # Usage
